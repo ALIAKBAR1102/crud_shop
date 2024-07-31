@@ -1,6 +1,6 @@
 import requests
 
-def get_all_products():
+def get_all_categories():
     response = requests.get('https://fakestoreapi.com/products/categories')
     if response.status_code == 200:
         categories = response.json()
