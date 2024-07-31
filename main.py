@@ -20,26 +20,23 @@ while True:
         products = categories_api.get_products_of_category(categories_name)
         
         for product in products:
-               print(f'{product["id"]}. {product["title"]} Price: {product["price"]}')
-        else:
-               print ('Не удалось получить продукты для указанной категории или категория не существует')     
+               print(f'{product["id"]}. {product["title"]} Price: {product["price"]}')   
     elif choice == '2':
         products = products_api.get_all_products()
         
-        if product:
+        if products:
             for product in products:
                 print(f'{product["id"]}. {product["title"]} Prise: {product["price"]}')
-            else:
-                print ('Не удолосы получиты список всех товаров!')
+        else:
+            print ('Не удолосы получиты список всех товаров!')
     elif choice == '3':
         carts = carts_api.get_all_carts()
         
         if carts:
-            print ('Список всех корзин')
             for cart in carts:
-                print (cart)
-            else:
-                print ('Не удолосы получиты список всех корзин!')         
+                print (f'{cart["id"]}. {cart["date"]} {cart["products"]}')
+        else:
+             print ('Не удолосы получиты список всех корзин!')         
     elif choice == '4':
         print ('Желаем вам удачи)')
         break
